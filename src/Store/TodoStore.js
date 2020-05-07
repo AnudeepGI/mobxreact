@@ -11,12 +11,10 @@ class TodoStore {
             () => this.totalTask >= 10,
             () => alert("Now your Task is more than 10")
         )
-
-        this.getVal()
-
+        this.getFromApi()
     }
 
-   @action getVal(){
+   @action getFromApi(){
        fetch('https://jsonplaceholder.typicode.com/todos/')
         .then(response => response.json())
         .then(json => {
@@ -47,7 +45,6 @@ class TodoStore {
         const inCompleteTodos = this.todos.filter(todo => !todo.complete)
         this.todos.replace(inCompleteTodos);
     }
-
 }
 
 var store = window.store = new TodoStore();

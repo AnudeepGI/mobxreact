@@ -1,10 +1,12 @@
 import React from 'react';
 import { observer } from "mobx-react";
 
+import Button from './Button';
+import TexBox from './TextBox';
+
+
 const TodoList = observer((props) => {
     const { filter, filteredTodos } = props.store;
-
-    console.log(filteredTodos)
 
     const createNew = (e) => {
       if(e.which === 13){
@@ -37,13 +39,14 @@ const TodoList = observer((props) => {
           <h1>Todays Task</h1>
           <h4>Total Task : { props.store.totalTask }  </h4>        
 
-          <input className="create" onKeyPress={(e) => createNew(e)} />
+          <TexBox className="create" onKeyPress={(e) => createNew(e)}/>
           <br/><br/>
-          <input className="filter" value={filter} onChange={(e)=>filterVal(e)} />
+          <TexBox className="filter" value={filter}  onChange={(e)=>filterVal(e)} />
+          
           <ul>
             {todoLis}
           </ul>
-          <button onClick={props.store.clearComplete} > Clear Complete </button>
+          <Button title="Click me" action={props.store.clearComplete}/>
         </div>
       );
 });
