@@ -15,5 +15,5 @@
 
     ├── Components              # All components are kept in this folder 
     ├── Models                  # All data are specified in this folder which is used by store, it will have different models for different datas
-    ├── Srvices                 # Tools and utilities
+    ├── Srvices                 # 
     └── Store                   # All data and databusiness logic will handle. 
