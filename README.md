@@ -1,6 +1,7 @@
 # Simple TODO App - Mobx and React 
 
-    Simple Todo app to understand Mobx and react concepts, like @obeserver, @computation, @action using react functional compoments
+    Simple Todo app to understand Mobx and react concepts, like @obeserver, @computation,
+    @action using react functional compoments
 
 ### Installing
     
