@@ -1,7 +1,7 @@
 import React from 'react';
 
-import TodoList from './TodoList';
-import store from './TodoStore';
+import TodoList from './Components/TodoList';
+import store from './Store/TodoStore';
 
 function App() {
   return (

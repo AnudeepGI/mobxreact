@@ -1,32 +1,36 @@
-import { autorun, observable, computed, action  } from 'mobx';
+import {  observable, computed, action, when  } from 'mobx';
 
-class Todo {
-    @observable value
-    @observable id
-    @observable complete
-
-    constructor(value){
-        this.value = value
-        this.id = Date.now()
-        this.complete = false
-    }
-}
-
+import Todo from '../Models/TodoModel';
 
 class TodoStore {
     @observable todos = [];
     @observable filter = "";
+    
+    constructor(value){
+        when(
+            () => this.totalTask >= 10,
+            () => alert("Now your Task is more than 10")
+        )
+    }
 
     @computed get filteredTodos(){
         var matchesFilter = new RegExp(this.filter,"i")
         return this.todos.filter( todo => !this.filter || matchesFilter.test(todo.value) )
     }
 
-    createTodo(value){
+    @computed get totalTask() {
+        return this.todos.length;
+    }
+
+    @action createTodo(value){
         this.todos.push(new Todo(value));
     }
 
-    clearComplete = () => {
+    @action chnageStatus(todo){
+        todo.complete = !todo.complete
+    }
+
+    @action clearComplete = () => {
         const inCompleteTodos = this.todos.filter(todo => !todo.complete)
         this.todos.replace(inCompleteTodos);
     }
