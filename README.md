@@ -8,3 +8,12 @@
     1. git clone https://github.com/AnudeepGI/mobxreact.git && cd mobxreact
     2. npm install
     3. npm start
+
+### Directory layout
+
+  src
+    ├── Components            # All components are kept in this folder 
+    ├── Models                # All data are specified in this folder which is used by store, it will have different models for different datas
+    ├── Srvices               # 
+    ├── Store                 # All data and databusiness logic will handle. 
+  
