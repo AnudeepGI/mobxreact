@@ -4,6 +4,8 @@ import { observer } from "mobx-react";
 const TodoList = observer((props) => {
     const { filter, filteredTodos } = props.store;
 
+    console.log(filteredTodos)
+
     const createNew = (e) => {
       if(e.which === 13){
         props.store.createTodo(e.target.value)

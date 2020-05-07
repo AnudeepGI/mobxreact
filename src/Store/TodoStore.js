@@ -11,6 +11,19 @@ class TodoStore {
             () => this.totalTask >= 10,
             () => alert("Now your Task is more than 10")
         )
+
+        this.getVal()
+
+    }
+
+   @action getVal(){
+       fetch('https://jsonplaceholder.typicode.com/todos/')
+        .then(response => response.json())
+        .then(json => {
+            json.slice(0, 5).forEach(element => {
+                this.todos.push(new Todo([element.title]));
+            });
+        })
     }
 
     @computed get filteredTodos(){
