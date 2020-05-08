@@ -9,6 +9,9 @@
     2. npm install
     3. npm start
 
+### Run test cases
+    
+    1. npm test
 
 ### Directory layout
 
