@@ -23,30 +23,24 @@ const TodoList = observer((props) => {
     const toggleComplete = (todo) => {
       props.store.chnageStatus(todo);
     }
-
-    const filteredTodoList = filteredTodos.map( (todo,key) => (
-      <li key={key}>
-        <input type="checkbox" 
-              onChange={toggleComplete.bind(this,todo)} 
-               value={todo.complete}
-               checked={todo.complete} 
-         />
-        {todo.value}
-      </li>
-    ));
     
     return (
         <div className="TodoList">
-          {console.log(filteredTodos)}
           <h1>Todays Task</h1>
           <h4>Total Task : { props.store.totalTask }  </h4>
 
           <TexBox className="create" onKeyPress={(e) => createNew(e)}/>
-          <br/><br/>
+          <br/>
+          <br/>
           <TexBox className="filter" value={filter}  onChange={(e)=>filterVal(e)} />
 
+          <br/>
+          <br/>
+
           <ItemList list={filteredTodos} onChange={toggleComplete} />
-          <Button title="Click me" action={props.store.clearComplete}/>
+          <br/>
+          <br/>
+          <Button title="Click me" action={props.store.clearComplete} />
         </div>
       );
 });

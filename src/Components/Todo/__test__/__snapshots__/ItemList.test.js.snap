@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Match Snapshot - ItemList 1`] = `
+<li>
+  <input
+    checked={false}
+    type="checkbox"
+    value={false}
+  />
+  FirstVal1
+</li>
+`;

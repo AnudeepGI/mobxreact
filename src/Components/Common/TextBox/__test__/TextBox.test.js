@@ -14,7 +14,7 @@ it("rednder without crashing", () => {
 });
 
 it("Match Snapshot - TextBox", () => {
-    const tree = renderer.create(<TextBox ></TextBox>).toJSON();
+    const tree = renderer.create(<TextBox />).toJSON();
     expect(tree).toMatchSnapshot();
 });
 
