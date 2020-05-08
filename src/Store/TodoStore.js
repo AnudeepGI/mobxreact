@@ -8,7 +8,7 @@ class TodoStore {
     
     constructor(value){
         when(
-            () => this.totalTask >= 10,
+            () => this.totalTask > 10,
             () => alert("Now your Task is more than 10")
         )
         this.getFromApi()

@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Match Snapshot - TextBox 1`] = `<input />`;
+
+exports[`Match Snapshot 1 1`] = `<input />`;

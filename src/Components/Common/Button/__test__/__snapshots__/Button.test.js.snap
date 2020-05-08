@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Match Snapshot - Button 1`] = `
+<button>
+  Click
+</button>
+`;
+
+exports[`Match Snapshot 1 1`] = `
+<button>
+  Click
+</button>
+`;

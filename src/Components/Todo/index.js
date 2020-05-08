@@ -1,8 +1,9 @@
 import React from 'react';
 import { observer } from "mobx-react";
 
-import Button from './Button';
-import TexBox from './TextBox';
+import Button from '../Common/Button/';
+import TexBox from '../Common/TextBox/';
+import ItemList from './ItemList';
 
 
 const TodoList = observer((props) => {
@@ -23,7 +24,7 @@ const TodoList = observer((props) => {
       props.store.chnageStatus(todo);
     }
 
-    const todoLis = filteredTodos.map( (todo,key) => (
+    const filteredTodoList = filteredTodos.map( (todo,key) => (
       <li key={key}>
         <input type="checkbox" 
               onChange={toggleComplete.bind(this,todo)} 
@@ -36,16 +37,15 @@ const TodoList = observer((props) => {
     
     return (
         <div className="TodoList">
+          {console.log(filteredTodos)}
           <h1>Todays Task</h1>
-          <h4>Total Task : { props.store.totalTask }  </h4>        
+          <h4>Total Task : { props.store.totalTask }  </h4>
 
           <TexBox className="create" onKeyPress={(e) => createNew(e)}/>
           <br/><br/>
           <TexBox className="filter" value={filter}  onChange={(e)=>filterVal(e)} />
-          
-          <ul>
-            {todoLis}
-          </ul>
+
+          <ItemList list={filteredTodos} onChange={toggleComplete} />
           <Button title="Click me" action={props.store.clearComplete}/>
         </div>
       );
